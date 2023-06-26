@@ -10,6 +10,18 @@ public enum Subtype {   Accessory, Angel, Animal, Ape, Artifact, Assassin, Baubl
                         Serpent, Skill, Slime, Spell, Spirit, Squirrel, Sword, Tamer, Turtle, Warrior, Wolf, Null }
 public enum Class { Assassin, Cleric, Guardian, Mage, Ranger, Tamer, Spirit, Warrior }
 
+public enum TriggerType { OnEnter, OnAttack, OnKill, OnDeath, OnChampionHit, OnHit, OnBanish, OnCast }
+
+[System.Serializable]
+public class CardEffect
+{
+    public bool classBonus;
+    public bool elementBonus;
+    public bool requiresTap;
+    public TriggerType triggerType;
+    public Effect effect;
+}
+
 [CreateAssetMenu(fileName = "NewCard", menuName = "Card")]
 public class Card : ScriptableObject
 {
@@ -28,5 +40,9 @@ public class Card : ScriptableObject
     public int life;
     public int power;
     public int durability;
-    public string description;
+    public bool fast = false;
+
+    public CardEffect[] effects;
+
+    public bool floatingMemory;
 }

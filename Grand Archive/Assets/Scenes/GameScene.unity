@@ -322,6 +322,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7351068294471390325, guid: 3c0b2c558c99a20479aa4390a55ed942, type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b587fb0e64d4d5449c8d795f581a9fb, type: 2}
     - target: {fileID: 7351068294471390326, guid: 3c0b2c558c99a20479aa4390a55ed942, type: 3}
       propertyPath: m_Name
       value: Card
