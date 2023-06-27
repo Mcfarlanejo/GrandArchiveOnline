@@ -8,6 +8,6 @@ public class DamageEffect : Effect
     [SerializeField] private int damageAmount;
     public override void ApplyEffect(CardManager caster, CardManager target)
     {
-        //target.Damage(damageAmount);
+        target.Damage(damageAmount);
     }
 }

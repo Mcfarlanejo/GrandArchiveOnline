@@ -8,10 +8,10 @@ public class DrawXEffect : Effect
     [SerializeField] private int baseDrawAmount;
     public override void ApplyEffect(CardManager caster, CardManager target)
     {
-        int totalDrawAmount = baseDrawAmount;//+ caster.level.GetValue();
+        int totalDrawAmount = baseDrawAmount + (caster.level + caster.levelCounters);
         for (int i = 0; i < totalDrawAmount; i++)
         {
-            //target.Draw();
+            target.Draw();
         }
     }
 }

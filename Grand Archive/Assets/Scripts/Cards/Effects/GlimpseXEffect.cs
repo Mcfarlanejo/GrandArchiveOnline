@@ -8,10 +8,8 @@ public class GlimpseXEffect : Effect
     [SerializeField] private int baseGlimpseAmount;
     public override void ApplyEffect(CardManager caster, CardManager target)
     {
-        int totalGlimpseAmount = baseGlimpseAmount;//+ caster.level.GetValue();
-        for (int i = 0; i < totalGlimpseAmount; i++)
-        {
-            //target.Draw();
-        }
+        int totalGlimpseAmount = baseGlimpseAmount + (caster.level + caster.levelCounters);
+
+        target.Glimpse(totalGlimpseAmount);
     }
 }
