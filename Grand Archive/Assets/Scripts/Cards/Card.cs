@@ -28,6 +28,8 @@ public class Card : ScriptableObject
     public new string name;
 
     public Sprite artwork;
+    public int collectorNumber;
+    public string set = "DOA";
 
     public Deck deck;
     public Element element;

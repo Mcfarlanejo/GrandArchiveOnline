@@ -24,17 +24,6 @@ public class CardManager : MonoBehaviour
         materialDeck.Equals(deck.materialDeck);
         sideboard.Equals(deck.sideboard);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Damage(int amount)
     {
