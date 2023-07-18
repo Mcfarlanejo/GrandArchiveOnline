@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -23,16 +26,74 @@ public class GameManager : MonoBehaviour
         _instance = this;
     }
     #endregion
+    public TMPro.TMP_Text nextTurnText;
+    public TMPro.TMP_Text playerIndicator;
 
     public CardManager player1;
     public CardManager player2;
+    public CardManager currentPlayer;
 
     public List<Card> stack;
+    public int turnCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        BeginGame();
+    }
+
+    private void BeginGame()
+    {
+        System.Random rnd = new System.Random();
         
+        if (rnd.Next(2) == 0)
+        {
+            currentPlayer = player1;
+            playerIndicator.text = "Player 1";
+        }
+        else
+        {
+            currentPlayer = player2;
+            playerIndicator.text = "Player 2";
+        }
+        turnCount++;
+    }
+
+    public void NextPhase()
+    {        
+        if (currentPlayer.phase == Phase.End)
+        {
+            if (currentPlayer == player1)
+            {
+                currentPlayer = player2;
+                playerIndicator.text = "Player 2";
+            }
+            else
+            {
+                currentPlayer = player1;
+                playerIndicator.text = "Player 1";
+            }
+            turnCount++;
+            if (turnCount > 2)
+            {
+                currentPlayer.phase = Phase.WakeUp;
+            }
+        }
+        else
+        {
+            currentPlayer.phase++;
+        }
+        
+        if (currentPlayer.phase == Phase.End)
+        {
+            nextTurnText.text = "Next Turn";
+        }
+        else
+        {
+            nextTurnText.text = "Next Phase";
+        }
+
+        Debug.Log($"Player: {currentPlayer.name}; Phase: {currentPlayer.phase}; Turn: {turnCount}");
     }
 
     // Update is called once per frame
