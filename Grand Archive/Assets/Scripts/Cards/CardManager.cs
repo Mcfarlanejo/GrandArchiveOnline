@@ -8,6 +8,7 @@ public class CardManager : MonoBehaviour
 {
     public PlayerDeck deck;
     private List<Card> mainDeck = new List<Card>();
+
     private List<Card> materialDeck = new List<Card>();
     private List<Card> sideboard = new List<Card>();
 
@@ -104,6 +105,12 @@ public class CardManager : MonoBehaviour
     public void DrawCard()
     {
         hand.Add(mainDeck[mainDeck.Count]);
+    }
+
+    internal void Discard(Card card)
+    {
+        graveyard.Add(card);
+        hand.Remove(card);
     }
 
     public void Glimpse(int amount)

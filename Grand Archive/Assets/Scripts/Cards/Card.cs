@@ -10,7 +10,7 @@ public enum Subtype {   Accessory, Angel, Animal, Ape, Artifact, Assassin, Baubl
                         Serpent, Skill, Slime, Spell, Spirit, Squirrel, Sword, Tamer, Turtle, Warrior, Wolf, Null }
 public enum Class { Assassin, Cleric, Guardian, Mage, Ranger, Tamer, Spirit, Warrior }
 
-public enum TriggerType { OnEnter, OnAttack, OnKill, OnDeath, OnChampionHit, OnHit, OnBanish, OnCast, Static }
+public enum TriggerType { OnEnter, OnAttack, OnKill, OnDeath, OnChampionHit, OnHit, OnBanish, OnCast, Static, EndOfTurn }
 
 [System.Serializable]
 public class CardEffect
@@ -46,6 +46,7 @@ public class Card : ScriptableObject
     public bool fast = false;
     public bool floatingMemory;
     [HideInInspector] public bool rested = false;
+    public bool efficiency = false;
 
     public CardEffect[] effects;
 }

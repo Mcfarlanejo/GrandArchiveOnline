@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955528aac4d8fa64dad0df47a30c0d7f, type: 3}
-  m_Name: Backstab
+  m_Name: Arcane Blast
   m_EditorClassIdentifier: 
-  name: Backstab
-  artwork: {fileID: 21300000, guid: 3fbbd92562ee5a748aa6d1230da2f364, type: 3}
-  collectorNumber: 70
+  name: Arcane Blast
+  artwork: {fileID: 21300000, guid: 3c09cd70b69ac95438078927dab8ca85, type: 3}
+  collectorNumber: 239
   set: DOA
   deck: 1
-  element: 0
-  type1: 2
+  element: 4
+  type1: 0
   type2: 9
-  subtypes: 0500000011000000
-  cost: 2
+  subtypes: 200000002d000000
+  cost: 11
   level: 0
   life: 0
-  power: 2
+  power: 0
   tempPower: 0
   durability: 0
   fast: 0
   floatingMemory: 0
   rested: 0
-  efficiency: 0
+  efficiency: 1
   effects:
-  - classBonus: 1
+  - classBonus: 0
     elementBonus: 0
     requiresTap: 0
     triggerType: 7
-    effect: {fileID: 11400000, guid: faaa97d6e5f9b1447bb5bb91634c505c, type: 2}
+    effect: {fileID: 11400000, guid: 9a09d8407be2252409c22d73b9c2ed48, type: 2}
