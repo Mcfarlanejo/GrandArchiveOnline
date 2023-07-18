@@ -51,12 +51,15 @@ public class GameManager : MonoBehaviour
             currentPlayer = player1;
             playerIndicator.text = "Player 1";
             player2.phase = Phase.Draw;
+            player1.Materialize();
         }
         else
         {
             currentPlayer = player2;
-            player1.phase = Phase.Draw;
             playerIndicator.text = "Player 2";
+            player1.phase = Phase.Draw;
+            player2.Materialize();
+
         }
         turnCount++;
     }
@@ -76,6 +79,10 @@ public class GameManager : MonoBehaviour
                 playerIndicator.text = "Player 1";
             }
             turnCount++;
+            if (currentPlayer.firstTurn)
+            {
+                currentPlayer.Materialize();
+            }
             if (turnCount > 2)
             {
                 currentPlayer.phase = Phase.WakeUp;

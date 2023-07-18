@@ -152,12 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4927425250be4cd4db142d99173c8047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 0}
+  deck: {fileID: 11400000, guid: f0efeced5940144459225fbee64deb32, type: 2}
+  mainDeck: []
+  materialDeck: []
+  sideboard: []
   hand: []
   memory: []
   field: []
+  lineage: []
   graveyard: []
   banishment: []
+  staticEffects: []
   damageCounters: 0
   lifeTotal: 0
   level: 0
@@ -165,6 +170,7 @@ MonoBehaviour:
   enlightenCounters: 0
   preperationCounters: 0
   phase: 4
+  firstTurn: 1
 --- !u!4 &20902654
 Transform:
   m_ObjectHideFlags: 0
@@ -376,12 +382,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4927425250be4cd4db142d99173c8047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 0}
+  deck: {fileID: 11400000, guid: f0efeced5940144459225fbee64deb32, type: 2}
+  mainDeck: []
+  materialDeck: []
+  sideboard: []
   hand: []
   memory: []
   field: []
+  lineage: []
   graveyard: []
   banishment: []
+  staticEffects: []
   damageCounters: 0
   lifeTotal: 0
   level: 0
@@ -389,6 +400,7 @@ MonoBehaviour:
   enlightenCounters: 0
   preperationCounters: 0
   phase: 4
+  firstTurn: 1
 --- !u!4 &496675601
 Transform:
   m_ObjectHideFlags: 0

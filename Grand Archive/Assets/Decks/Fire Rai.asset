@@ -12,6 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13126a7874c27f44bcfebbede53c426, type: 3}
   m_Name: Fire Rai
   m_EditorClassIdentifier: 
-  mainDeck: []
-  materialDeck: []
+  mainDeck:
+  - {fileID: 11400000, guid: 5e747b99e328f1741b7801036db90749, type: 2}
+  - {fileID: 11400000, guid: 5e747b99e328f1741b7801036db90749, type: 2}
+  - {fileID: 11400000, guid: 5e747b99e328f1741b7801036db90749, type: 2}
+  - {fileID: 11400000, guid: 5e747b99e328f1741b7801036db90749, type: 2}
+  - {fileID: 11400000, guid: ecb3a0c43e0b63f43a24638c65f6ef23, type: 2}
+  - {fileID: 11400000, guid: ecb3a0c43e0b63f43a24638c65f6ef23, type: 2}
+  - {fileID: 11400000, guid: ecb3a0c43e0b63f43a24638c65f6ef23, type: 2}
+  - {fileID: 11400000, guid: ecb3a0c43e0b63f43a24638c65f6ef23, type: 2}
+  - {fileID: 11400000, guid: 962ec0fa442d405448577471dac2c11a, type: 2}
+  - {fileID: 11400000, guid: 962ec0fa442d405448577471dac2c11a, type: 2}
+  - {fileID: 11400000, guid: 962ec0fa442d405448577471dac2c11a, type: 2}
+  - {fileID: 11400000, guid: 962ec0fa442d405448577471dac2c11a, type: 2}
+  - {fileID: 11400000, guid: 2e1030ee6b9690344b6b8079188699b8, type: 2}
+  - {fileID: 11400000, guid: 2e1030ee6b9690344b6b8079188699b8, type: 2}
+  - {fileID: 11400000, guid: 2e1030ee6b9690344b6b8079188699b8, type: 2}
+  - {fileID: 11400000, guid: 2e1030ee6b9690344b6b8079188699b8, type: 2}
+  - {fileID: 11400000, guid: e71eca4330715984491bf440faa7ee71, type: 2}
+  - {fileID: 11400000, guid: e71eca4330715984491bf440faa7ee71, type: 2}
+  - {fileID: 11400000, guid: e71eca4330715984491bf440faa7ee71, type: 2}
+  - {fileID: 11400000, guid: e71eca4330715984491bf440faa7ee71, type: 2}
+  materialDeck:
+  - {fileID: 11400000, guid: 497fdfe346f5bef4ca7d8757a636dd9c, type: 2}
+  - {fileID: 11400000, guid: 2b38993cbc5e82a4b81709cde6569886, type: 2}
+  - {fileID: 11400000, guid: aed4377d10cf0dd47a70aaecb2146a78, type: 2}
+  - {fileID: 11400000, guid: 3b587fb0e64d4d5449c8d795f581a9fb, type: 2}
+  - {fileID: 11400000, guid: a6e44c7833207954a9638d30e004c1ab, type: 2}
+  - {fileID: 11400000, guid: b1a8eae87cdc9444393d031e6cdad7a6, type: 2}
+  - {fileID: 11400000, guid: ecf97447a38eda04ca664317310ec5df, type: 2}
   sideboard: []

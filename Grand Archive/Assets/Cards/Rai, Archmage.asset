@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955528aac4d8fa64dad0df47a30c0d7f, type: 3}
+  m_Name: Rai, Archmage
+  m_EditorClassIdentifier: 
+  name: Rai, Archmage
+  artwork: {fileID: 21300000, guid: 90542056475df814396c29db0333af12, type: 3}
+  collectorNumber: 8
+  set: DOA
+  deck: 0
+  element: 0
+  type1: 3
+  type2: 9
+  subtypes: 200000001c000000
+  cost: 2
+  level: 2
+  life: 22
+  power: 0
+  tempPower: 0
+  durability: 0
+  fast: 0
+  floatingMemory: 0
+  rested: 0
+  efficiency: 0
+  effects:
+  - classBonus: 0
+    elementBonus: 0
+    requiresTap: 0
+    triggerType: 8
+    effect: {fileID: 11400000, guid: 356496ed407275c4b8e38e72bd3c901d, type: 2}

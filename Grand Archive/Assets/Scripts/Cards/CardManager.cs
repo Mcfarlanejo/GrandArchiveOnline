@@ -1,22 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Phase { WakeUp, Materialize, Recollection, Draw, Main, End }
 public class CardManager : MonoBehaviour
 {
     public PlayerDeck deck;
-    private List<Card> mainDeck = new List<Card>();
+    public List<Card> mainDeck = new List<Card>();
 
-    private List<Card> materialDeck = new List<Card>();
-    private List<Card> sideboard = new List<Card>();
+    public List<Card> materialDeck = new List<Card>();
+    public List<Card> sideboard = new List<Card>();
 
     public List<Card> hand = new List<Card>();
     public List<Card> memory = new List<Card>();
     public List<Card> field = new List<Card>();
+    public List<Card> lineage = new List<Card>();
     public List<Card> graveyard = new List<Card>();
     public List<Card> banishment = new List<Card>();
+
+    public List<Effect> staticEffects = new List<Effect>();
 
     public int damageCounters = 0;
     public int lifeTotal;
@@ -26,12 +30,13 @@ public class CardManager : MonoBehaviour
     public int preperationCounters = 0;
 
     public Phase phase = Phase.Main;
+    public bool firstTurn = true;
 
     private void Awake()
     {
-        mainDeck.Equals(deck.mainDeck);
-        materialDeck.Equals(deck.materialDeck);
-        sideboard.Equals(deck.sideboard);
+        mainDeck = deck.mainDeck.ToList();
+        materialDeck = deck.materialDeck.ToList();
+        sideboard = deck.sideboard.ToList();
     }
 
     public void RunCurrentPhase()
@@ -63,15 +68,51 @@ public class CardManager : MonoBehaviour
 
     private void WakeUp()
     {
-        foreach (Card card in field)
+        if (field.Count != 0)
         {
-            card.rested = false;
+            foreach (Card card in field)
+            {
+                card.rested = false;
+            }
+        }
+        
+    }
+
+    public void Materialize()
+    {
+        if (firstTurn)
+        {
+            Card spirit = null;
+
+            foreach (Card card in materialDeck)
+            {
+                if (card.type1 == Type.Champion && card.subtypes[0] == Subtype.Spirit)
+                {
+                    spirit = card;
+                }
+            }
+            Cast(spirit);
+            materialDeck.Remove(spirit);
+            lineage.Add(spirit);
+            firstTurn = false;
         }
     }
 
-    private void Materialize()
+    private void Cast(Card card)
     {
-        throw new NotImplementedException();
+
+        if (card.type1 == Type.Champion || card.type1 == Type.Ally || card.type1 == Type.Regalia)
+        {
+            field.Add(card);
+            foreach (CardEffect effect in card.effects)
+            {
+                if (effect.triggerType == TriggerType.OnEnter)
+                {
+                    effect.effect.ApplyEffect(this, this);
+                }
+            }
+        }
+        
     }
 
     private void Recollection()
@@ -104,7 +145,8 @@ public class CardManager : MonoBehaviour
 
     public void DrawCard()
     {
-        hand.Add(mainDeck[mainDeck.Count]);
+        hand.Add(mainDeck[mainDeck.Count - 1]);
+        mainDeck.Remove(mainDeck[mainDeck.Count - 1]);
     }
 
     internal void Discard(Card card)
