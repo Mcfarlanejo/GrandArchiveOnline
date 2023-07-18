@@ -11,7 +11,7 @@ public class DrawXEffect : Effect
         int totalDrawAmount = baseDrawAmount + (caster.level + caster.levelCounters);
         for (int i = 0; i < totalDrawAmount; i++)
         {
-            target.Draw();
+            target.DrawCard();
         }
     }
 }

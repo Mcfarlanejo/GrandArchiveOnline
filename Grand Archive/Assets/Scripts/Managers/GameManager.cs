@@ -50,10 +50,12 @@ public class GameManager : MonoBehaviour
         {
             currentPlayer = player1;
             playerIndicator.text = "Player 1";
+            player2.phase = Phase.Draw;
         }
         else
         {
             currentPlayer = player2;
+            player1.phase = Phase.Draw;
             playerIndicator.text = "Player 2";
         }
         turnCount++;
@@ -92,6 +94,8 @@ public class GameManager : MonoBehaviour
         {
             nextTurnText.text = "Next Phase";
         }
+
+        currentPlayer.RunCurrentPhase();
 
         Debug.Log($"Player: {currentPlayer.name}; Phase: {currentPlayer.phase}; Turn: {turnCount}");
     }

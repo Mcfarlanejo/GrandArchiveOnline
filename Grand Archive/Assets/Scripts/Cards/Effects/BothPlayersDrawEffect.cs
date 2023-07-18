@@ -10,11 +10,11 @@ public class BothPlayersDrawEffect : Effect
     {
         for (int i = 0; i < casterDrawAmount; i++)
         {
-            caster.Draw();
+            caster.DrawCard();
         }
         for (int i = 0; i < opponentDrawAmount; i++)
         {
-            target.Draw();
+            target.DrawCard();
         }
     }
 }

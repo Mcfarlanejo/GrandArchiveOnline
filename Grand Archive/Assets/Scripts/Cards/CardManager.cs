@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,12 +33,75 @@ public class CardManager : MonoBehaviour
         sideboard.Equals(deck.sideboard);
     }
 
+    public void RunCurrentPhase()
+    {
+        switch (phase)
+        {
+            case Phase.WakeUp:
+                WakeUp();
+                break;
+            case Phase.Materialize:
+                Materialize();
+                break;
+            case Phase.Recollection:
+                Recollection();
+                break;
+            case Phase.Draw:
+                Draw();
+                break;
+            case Phase.Main:
+                MainPhase();
+                break;
+            case Phase.End:
+                End();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void WakeUp()
+    {
+        foreach (Card card in field)
+        {
+            card.rested = false;
+        }
+    }
+
+    private void Materialize()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Recollection()
+    {
+        foreach (Card card in memory)
+        {
+            hand.Add(card);
+        }
+    }
+
+    private void Draw()
+    {
+        DrawCard();
+    }
+
+    private void MainPhase()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void End()
+    {
+        
+    }
+    
     public void Damage(int amount)
     {
         damageCounters += amount;
     }
 
-    public void Draw()
+    public void DrawCard()
     {
         hand.Add(mainDeck[mainDeck.Count]);
     }
@@ -52,7 +116,7 @@ public class CardManager : MonoBehaviour
         if (enlightenCounters >= 3)
         {
             enlightenCounters -= 3;
-            Draw();
+            DrawCard();
         }
     }
 }

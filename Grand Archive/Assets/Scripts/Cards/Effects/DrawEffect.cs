@@ -10,7 +10,7 @@ public class DrawEffect : Effect
     {
         for (int i = 0; i < drawAmount; i++)
         {
-            target.Draw();
+            target.DrawCard();
         }
     }
 }
