@@ -17,6 +17,7 @@ public class CardManager : MonoBehaviour
     public int level;
     public int levelCounters;
     public int enlightenCounters = 0;
+    public int preperationCounters = 0;
 
     private void Awake()
     {

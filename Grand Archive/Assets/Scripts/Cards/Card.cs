@@ -41,9 +41,11 @@ public class Card : ScriptableObject
     public int level;
     public int life;
     public int power;
+    [HideInInspector] public int tempPower = 0;
     public int durability;
     public bool fast = false;
     public bool floatingMemory;
+    [HideInInspector] public bool rested = false;
 
     public CardEffect[] effects;
 }

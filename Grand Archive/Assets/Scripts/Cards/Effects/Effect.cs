@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EffectTarget { self, opponent }
+public enum EffectTarget { self, opponent, card }
 public abstract class Effect : ScriptableObject
 {
     public EffectTarget target = EffectTarget.opponent;
