@@ -8,6 +8,7 @@ public enum Phase { WakeUp, Materialize, Recollection, Draw, Main, End }
 public class CardManager : MonoBehaviour
 {
     public PlayerDeck deck;
+    public CardManager opponent;
     public List<Card> mainDeck = new List<Card>();
 
     public List<Card> materialDeck = new List<Card>();
@@ -37,6 +38,18 @@ public class CardManager : MonoBehaviour
         mainDeck = deck.mainDeck.ToList();
         materialDeck = deck.materialDeck.ToList();
         sideboard = deck.sideboard.ToList();
+    }
+
+    private void Start()
+    {
+        if (GameManager.instance.player1 == this)
+        {
+            opponent = GameManager.instance.player2;
+        }
+        else
+        {
+            opponent = GameManager.instance.player1;
+        }
     }
 
     public void RunCurrentPhase()
@@ -108,11 +121,32 @@ public class CardManager : MonoBehaviour
             {
                 if (effect.triggerType == TriggerType.OnEnter)
                 {
-                    effect.effect.ApplyEffect(this, this);
+                    UseEffect(effect.effect);
                 }
             }
         }
         
+    }
+
+    private void UseEffect(Effect effect)
+    {
+        switch (effect.target)
+        {
+            case EffectTarget.self:
+                effect.ApplyEffect(this, this);
+                break;
+            case EffectTarget.champion:
+                effect.ApplyEffect(this, opponent);
+                break;
+            case EffectTarget.ally:
+                effect.ApplyEffect(this, opponent);
+                break;
+            case EffectTarget.unit:
+                effect.ApplyEffect(this, opponent);
+                break;
+            default:
+                break;
+        }
     }
 
     private void Recollection()

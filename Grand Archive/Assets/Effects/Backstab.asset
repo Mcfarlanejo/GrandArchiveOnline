@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a602022c59763468ba27fc73a52949, type: 3}
   m_Name: Backstab
   m_EditorClassIdentifier: 
-  target: 2
+  target: 3
   damageAmount: 2
   targetCard: {fileID: 0}
