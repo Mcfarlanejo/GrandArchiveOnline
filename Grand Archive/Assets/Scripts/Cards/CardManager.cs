@@ -32,6 +32,8 @@ public class CardManager : MonoBehaviour
 
     public Phase phase = Phase.Main;
     public bool firstTurn = true;
+    public GameObject handContainer;
+    public GameObject cardObject;
 
     private void Awake()
     {
@@ -181,6 +183,13 @@ public class CardManager : MonoBehaviour
     {
         hand.Add(mainDeck[mainDeck.Count - 1]);
         mainDeck.Remove(mainDeck[mainDeck.Count - 1]);
+        UpdateHand(hand[hand.Count - 1]);
+    }
+
+    private void UpdateHand(Card card)
+    {
+        GameObject newCard = Instantiate(cardObject, handContainer.transform);
+        newCard.GetComponent<CardObject>().card = card;
     }
 
     internal void Discard(Card card)
