@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Backstab
   m_EditorClassIdentifier: 
   target: 3
+  area: 2
   damageAmount: 2
   targetCard: {fileID: 0}

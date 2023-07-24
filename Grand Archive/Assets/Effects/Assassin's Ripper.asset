@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Assassin's Ripper
   m_EditorClassIdentifier: 
   target: 0
+  area: 2
   damageAmount: 2
   prepCost: 1

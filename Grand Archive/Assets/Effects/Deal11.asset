@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Deal11
   m_EditorClassIdentifier: 
   target: 1
+  area: 0
   damageAmount: 11

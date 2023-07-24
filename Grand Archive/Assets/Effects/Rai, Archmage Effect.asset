@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Rai, Archmage Effect
   m_EditorClassIdentifier: 
   target: 0
+  area: 2

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Enlighten2
   m_EditorClassIdentifier: 
   target: 0
+  area: 2
   enlightenAmount: 2

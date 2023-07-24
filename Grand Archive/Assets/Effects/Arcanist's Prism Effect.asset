@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Arcanist's Prism Effect
   m_EditorClassIdentifier: 
   target: 0
+  area: 2

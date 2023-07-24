@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Draw1
   m_EditorClassIdentifier: 
   target: 0
+  area: 2
   drawAmount: 1

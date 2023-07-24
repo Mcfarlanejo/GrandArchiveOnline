@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Glimpse3
   m_EditorClassIdentifier: 
   target: 0
+  area: 2
   glimpseAmount: 3
