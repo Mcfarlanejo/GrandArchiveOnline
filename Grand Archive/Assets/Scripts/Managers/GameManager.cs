@@ -117,17 +117,46 @@ public class GameManager : MonoBehaviour
     {
         for (int i = stack.Count; i > 0; i--)
         {
-            ResolveCard(stack[i]);
+            //ResolveCard(stack[i]);
         }
     }
 
-    void ResolveCard(Card card)
+    public void ResolveCard(Card card, String caster)
     {
+        CardManager castingPlayer;
+        CardManager opponent;
+        if (caster == "player1")
+        {
+            castingPlayer = player1;
+            opponent = player2;
+        }
+        else
+        {
+            castingPlayer = player2;
+            opponent = player1;
+        }
         foreach (CardEffect effect in card.effects)
         {
+            CardManager target = null;
+            switch (effect.effect.target)
+            {
+                case EffectTarget.self:
+                    target = castingPlayer;
+                    break;
+                case EffectTarget.champion:
+                    target = opponent;
+                    break;
+                case EffectTarget.ally:
+                    break;
+                case EffectTarget.unit:
+                    break;
+                default:
+                    break;
+            }
             if (effect.triggerType == TriggerType.OnCast)
             {
-                //effect.effect.ApplyEffect()
+                effect.effect.ApplyEffect(castingPlayer, target);
+                Debug.Log(card.name);
             }
         }
     }

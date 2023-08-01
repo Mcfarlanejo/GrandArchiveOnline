@@ -90,3 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 497fdfe346f5bef4ca7d8757a636dd9c, type: 2}
+  castMenu: {fileID: 5841431065464980902, guid: 8dd810697e35d2e46912a71ca42d3b87, type: 3}
+  castButton: {fileID: 0}
